@@ -8,8 +8,8 @@ import ShoppingCart from './Pages/ShoppingCart'
 
 const App = () => {
   return (
-    <div>
-      <Register/>
+    <div style={{width : "100vw"}}>
+      <ShoppingCart/>
     </div>
   )
 }

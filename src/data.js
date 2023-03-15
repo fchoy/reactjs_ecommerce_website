@@ -55,32 +55,38 @@ export const categories = [
 export const popularProducts = [
     {
         id: 1, 
-        img : "https://essentialshoodie.store/wp-content/uploads/2022/01/Fear-Of-God-Essentials-Hoodie.jpg"
+        img : "https://essentialshoodie.store/wp-content/uploads/2022/01/Fear-Of-God-Essentials-Hoodie.jpg",
+        height : ""
     }, 
     
     {
         id: 2, 
-        img : "https://media.gq.com/photos/624c7fa19a57a1eb0f870666/master/w_2000,h_1333,c_limit/nike-5.jpg"
+        img : "https://media.gq.com/photos/624c7fa19a57a1eb0f870666/master/w_2000,h_1333,c_limit/nike-5.jpg",
+        height : ""
     },     
     
     {
         id: 3, 
-        img : "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/422371/item/goods_31_422371.jpg"
+        img : "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/422371/item/goods_31_422371.jpg",
+        height : ""
     }, 
 
     {
         id: 4, 
-        img : "https://cdn.shopify.com/s/files/1/0330/1705/products/ame_hoodie_1.jpg?v=1638483444"
+        img : "https://cdn.shopify.com/s/files/1/0330/1705/products/ame_hoodie_1.jpg?v=1638483444",
+        height : "30vh"
     }, 
     
     {
         id: 5, 
-        img : "https://cdn.shopify.com/s/files/1/0330/1705/products/BAELZ_CAP_1000x.png?v=1659116612"
+        img : "https://cdn.shopify.com/s/files/1/0330/1705/products/BAELZ_CAP_1000x.png?v=1659116612",
+        height : "35vh"
     },     
     
     {
         id: 6, 
-        img : shoes
+        img : shoes,
+        height : ""
     } 
 ];
 

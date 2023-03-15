@@ -3,15 +3,15 @@ import React from 'react'
 import styled from "styled-components";
 import { useState } from 'react';
 import {sliderItems} from "../data"; //import our "slideItems" object from our data.js file
-import {mobile} from '../responsive'
+import {mobile, mobile_425width} from '../responsive'
 
 const Container = styled.div`
     width: 100%;
     height : 100vh;
     display : flex;
     overflow: hidden; //prevent overflow vertically and horizontally
-    ${mobile({marginTop: "50px"})}
-    ${mobile({display : "none"})};
+    ${mobile({marginTop: "50px", display : "none"})}
+    ${mobile_425width({marginTop: "50px", display : "none"})}
 `;
 
 const Arrow = styled.div`

@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Facebook, Twitter, Instagram, Room, Phone, EmailOutlined } from "@mui/icons-material";
 import creditcardlogos from "./Images/creditcardlogos.png"
-import {mobile} from "../responsive"
+import {mobile, mobile_425width} from "../responsive"
 
 const Container = styled.div`
   display: flex;
-  ${mobile({flexDirection : "column"})};
+  ${mobile({flexDirection : "column", width : "100vw"})};
+  ${mobile_425width({flexDirection : "column", width : "100vw"})};
+
 `;
 
 const Left = styled.div`
@@ -15,12 +17,16 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   padding: 20px;
+  ${mobile({  padding: "1% 10%"})};
+  ${mobile({  padding: "1% 10%"})};
 `;
 
 const Logo = styled.div`
   font-size: 30px;
   font-weight: bold;
   ${mobile({textAlign : "center"})};
+  ${mobile_425width({textAlign : "center"})};
+
 `;
 
 const Description = styled.p`
@@ -28,11 +34,15 @@ const Description = styled.p`
   font-weight: 400;
   margin: 10px 0px;
   ${mobile({textAlign : "center"})};
+  ${mobile_425width({textAlign : "center"})};
+
 `;
 
 const SocialMediaContainer = styled.div`
   display: flex;
   ${mobile({justifyContent : "center"})};
+  ${mobile_425width({justifyContent : "center"})};
+
 `;
 
 const SocialIcon = styled.div`
@@ -58,6 +68,8 @@ const Title = styled.h3`
   margin-bottom: 5px;
   text-align: center;
   ${mobile({fontSize : "24px"})};
+  ${mobile_425width({fontSize : "24px"})};
+
 `;
 const List = styled.ul`
   margin: 0;
@@ -72,6 +84,8 @@ const ListItem = styled.li`
   text-align : center;
   cursor : pointer;
   ${mobile({height:"40px", fontSize: "20px", display: "flex", justifyContent: "center", alignItems: "center"})};
+  ${mobile_425width({height:"40px", fontSize: "20px", display: "flex", justifyContent: "center", alignItems: "center"})};
+
 `;
 
 const Right = styled.div`
@@ -81,6 +95,8 @@ const Right = styled.div`
   flex-direction : column;
   align-items : center;
   ${mobile({padding : "10px"})};
+  ${mobile_425width({padding : "10px"})};
+
 `;
 
 const ContactItem = styled.div`

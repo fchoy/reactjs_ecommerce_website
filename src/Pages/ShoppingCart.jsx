@@ -4,28 +4,40 @@ import styled from "styled-components";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import {mobile, mobile_425width} from '../responsive'
 
 const Container = styled.div``;
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  ${mobile({display : "flex", flexDirection : "column"})}
+  ${mobile_425width({display : "flex", flexDirection : "column"})}
+`;
 const Title = styled.h1`
   padding: 0px 20px;
   font-weight: 400;
   text-align: center;
+  ${mobile({textDecoration : "underline"})}
+  ${mobile_425width({textDecoration : "underline"})}
 `;
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({display : "flex", flexDirection : "column"})}
+  ${mobile_425width({display : "flex", flexDirection : "column"})}
 `;
 
 const TopTexts = styled.div`
-  cursor: pointer;
+  ${mobile({marginBottom : "7%"})}
+  ${mobile_425width({marginBottom : "7%"})}
 `;
 const TopText = styled.span`
   cursor: pointer;
   margin: 0px 10px;
   text-decoration: underline;
+  ${mobile({fontSize : "1.2em"})}
+  ${mobile_425width({fontSize : "1.2em"})}
+
 `;
 
 const TopButton = styled.button`
@@ -36,16 +48,23 @@ const TopButton = styled.button`
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
+
+  ${mobile({marginBottom : "7%", width : "50vw", height : "10vh", fontSize : "1.1em"})}
+  ${mobile_425width({marginBottom : "7%", width : "50vw", height : "10vh", fontSize : "1.1em"})}
 `;
 
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({flexDirection : "column"})}
+  ${mobile_425width({flexDirection : "column"})}
 `;
 
 const ProductInfo = styled.div`
   flex: 3;
+  ${mobile({marginBottom : "7%"})}
+  ${mobile_425width({marginBottom : "7%"})}
 `;
 
 const Product = styled.div`
@@ -111,6 +130,22 @@ const AmountContainer = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
 `;
+
+const AddButton = styled(Add)`
+  &&{
+    &:hover{
+      opacity : 0.9;
+    }
+  }
+`;
+
+const RemoveButton = styled(Remove)`
+  &&{
+    &:hover{
+      opacity : 0.9;
+    }
+  }
+`;
 const ProductAmount = styled.span`
   font-size: 24px;
   margin: 20px;
@@ -147,6 +182,8 @@ const SummaryTitleContainer = styled.div`
   align-items: center;
   border-bottom : 1px dotted black;
   padding-top : 2px;
+  ${mobile({marginBottom : "3.5%"})}
+  ${mobile_425width({marginBottom : "3.5%"})}
 `;
 
 const SummaryTitle = styled.span`
@@ -159,6 +196,8 @@ const SummaryTitle = styled.span`
 const SummaryItem = styled.div`
   font-weight : ${props => props.type === "total" ? 500 : 400};
   font-size : ${props => props.type === "total" ? "28px" : "18px"};
+  ${mobile({marginBottom : "3.5%"})}
+  ${mobile_425width({marginBottom : "3.5%"})}
 `;
 const SummaryItemText = styled.span`
 `;
@@ -178,6 +217,9 @@ const Button = styled.button`
     cursor : pointer;
     background-color : rgba(0,0,0, 0.9);
   }
+
+  ${mobile({width : "80vw", height : "10vh"})}
+  ${mobile_425width({width : "80vw", height : "10vh"})}
 `;
 
 const ShoppingCart = () => {
@@ -211,9 +253,9 @@ const ShoppingCart = () => {
               </ProductDetails>
               <PriceDetail>
                 <AmountContainer>
-                  <Remove />
+                  <RemoveButton />
                   <ProductAmount>1</ProductAmount>
-                  <Add />
+                  <AddButton />
                 </AmountContainer>
                 <ProductPrice>$35</ProductPrice>
               </PriceDetail>
@@ -233,9 +275,9 @@ const ShoppingCart = () => {
               </ProductDetails>
               <PriceDetail>
                 <AmountContainer>
-                  <Remove />
+                  <RemoveButton />
                   <ProductAmount>1</ProductAmount>
-                  <Add />
+                  <AddButton />
                 </AmountContainer>
                 <ProductPrice>$65</ProductPrice>
               </PriceDetail>

@@ -5,7 +5,7 @@ import {
 } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
-import {mobile} from '../responsive'
+import {mobile, mobile_425width} from '../responsive'
 
 const Info = styled.div`
   opacity : 0; //no icons on start
@@ -33,12 +33,13 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f5fbfd;
   position : relative;
-
-
   //only affects Info component on when hovering over Container div (styled components)
   &:hover ${Info}{
     opacity : 1;
   }
+
+  ${mobile({width : "fit-content", margin : "3% auto"})};
+  ${mobile_425width({width : "fit-content",  margin : "3% auto"})};
 `;
 
 const Circle = styled.div`
@@ -48,14 +49,17 @@ const Circle = styled.div`
   background: white;
   position: absolute;
   ${mobile({height: "100px", width : "100px"})};
+  ${mobile_425width({height: "100px", width : "100px"})};
 `;
+
 const Image = styled.img`
-  height: 50%;
-  width: 55%;
+  height: ${props => props.height === "" ? "25vh" : props.height};
+  width: 80%;
   z-index: 2;
   mix-blend-mode: multiply;
   background-color: white;
-  ${mobile({objectFit: "cover"})};
+  ${mobile({objectFit: "fill", height: "40vh", width : "80vw"})};
+  ${mobile_425width({objectFit: "fill", height: "40vh", width : "80vw"})};
 `;
 
 const Icon = styled.div`
@@ -68,19 +72,23 @@ const Icon = styled.div`
   background-color : white;
   margin : 5px;  
   transition : all 0.5s ease; //for all transitions 
+  z-index : 3;
 
   &:hover{ //on icon hover
     background-color : #e9f5f5; //change bg color
     transform: scale(1.1); //enlarge by 1.1 on x and y axis
     cursor : pointer;
   }
+
+  ${mobile({width: "15%", height : "20%"})};
+  ${mobile_425width({width: "15%", height : "20%"})};
 `;
 
 const Product = ({ item }) => {
   return (
     <Container>
       <Circle />
-      <Image src={item.img} />
+      <Image src={item.img} height={item.height}/>
       <Info>
         <Icon>
           <ShoppingCartOutlined />

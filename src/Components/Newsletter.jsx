@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Send } from '@mui/icons-material';
-import {mobile} from '../responsive'
+import {mobile, mobile_425width} from '../responsive'
 
 
 const Container = styled.div`
@@ -11,6 +11,8 @@ const Container = styled.div`
   align-items : center;
   justify-content: center;
   flex-direction: column;
+  ${mobile({width : "100vw"})};
+  ${mobile_425width({width : "100vw"})};
 `;
 
 const Title = styled.div`
@@ -23,6 +25,7 @@ const Description = styled.span`
   font-weight : 400;
   font-size : 25px;
   ${mobile({textAlign: "center"})};
+  ${mobile_425width({textAlign: "center", fontSize : "2em"})};
 `;
 
 const InputContainer = styled.div`
@@ -32,8 +35,8 @@ const InputContainer = styled.div`
   justify-content: space-between;
   border : 1px solid gray;
   background-color : white;
-  ${mobile({width : "60%"})};
-
+  ${mobile({width : "80%"})};
+  ${mobile_425width({width : "80%"})};
 `;
 
 const Input = styled.input`

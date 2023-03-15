@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {mobile} from '../responsive'
+import {mobile, mobile_425width} from '../responsive'
 
 const Container = styled.div`
   flex : 1;
@@ -8,12 +8,15 @@ const Container = styled.div`
   margin : 5px; 
   position : relative;
   ${mobile({height: "40vh"})}
+  ${mobile_425width({height: "40vh", width : "90%"})}
 `
 const Image = styled.img`
   width : 100%;
   height : 100%;
   object-fit : scale-down;
   ${mobile({objectFit: "cover"})}
+  ${mobile_425width({objectFit: "cover"})}
+
 `
 const Info = styled.div`
   position: absolute;
@@ -29,7 +32,8 @@ const Info = styled.div`
 const Title = styled.h1`
   color : #c45c1c;
   margin-bottom : 20px;
-  ${mobile({fontSize: "14px", marginBottom : "10px", color: "#a3a805c0"})}
+  ${mobile({fontSize: "1.2em", marginBottom : "2%", color: "#a3a805c0"})}
+  ${mobile_425width({fontSize: "1.2em", marginBottom : "2%", color: "#a3a805c0"})}
 `
 const Button = styled.button`
   height : fit-content;
