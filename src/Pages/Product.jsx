@@ -9,16 +9,20 @@ import {mobile, mobile_425width} from '../responsive';
 
 const Container = styled.div`
   width : 100vw;
+  ${mobile({width : "fit-content"})}
+  ${mobile_425width({width : "fit-content"})}
 `;
 const ProductWrapper = styled.div`
   display: flex;
   padding: 50px;
-  ${mobile({flexDirection : "column"})}
-  ${mobile_425width({flexDirection : "column"})}
+  ${mobile({flexDirection : "column", padding : "0", width : "fit-content"})}
+  ${mobile_425width({flexDirection : "column", padding : "0", width : "fit-content"})}
 `;
 const ImgContainer = styled.div`
   flex: 1;
   text-align: center;
+  ${mobile({width : "100%"})}
+  ${mobile_425width({width : "100%"})}
 `;
 const Image = styled.img`
   width: 50%;
@@ -31,8 +35,8 @@ const InfoContainer = styled.div`
   margin: auto 0;
   padding-right: 10vh;
   //background-color : rgba(128,128,128, 0.1);
-  ${mobile({width : "100%", display : "flex", flexDirection : "column", justifyContent : "center", alignItems : "center"})}
-  ${mobile_425width({width : "100%", display : "flex", flexDirection : "column", justifyContent : "center", alignItems : "center"})}
+  ${mobile({width : "100%", display : "flex", flexDirection : "column", justifyContent : "center", alignItems : "center", padding : "0"})}
+  ${mobile_425width({width : "100%", display : "flex", flexDirection : "column", justifyContent : "center", alignItems : "center", padding : "0"})}
 `;
 const Title = styled.h1`
   font-weight: 200;

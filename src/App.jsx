@@ -9,7 +9,7 @@ import ShoppingCart from './Pages/ShoppingCart'
 const App = () => {
   return (
     <div style={{width : "100vw"}}>
-      <ShoppingCart/>
+      <Product/>
     </div>
   )
 }
