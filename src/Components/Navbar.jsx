@@ -1,5 +1,6 @@
 import { Search, ShoppingCartCheckoutOutlined } from '@mui/icons-material';
 import { Badge } from '@mui/material';
+import { Link } from 'react-router-dom';
 import {mobile, mobile_425width} from '../responsive'
 import React from 'react';
 import styled from 'styled-components';
@@ -89,11 +90,13 @@ const MenuDiv = styled.div`
 
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled(Link)`
   font-size : 14px;
   cursor : pointer; /*Cursor is pointer when hovered over the Menu Items Components.*/
   margin-right : 100px;
   width : fit-content;
+  text-decoration: none;
+  color : black;
   ${mobile({marginRight : "0", marginBottom : "20%", fontSize : "2em"})}
   ${mobile_425width({marginRight : "0", marginBottom : "20%", fontSize : "2em"})}
 
@@ -108,6 +111,7 @@ const ShoppingCartBadge = styled(Badge)`
 
 const ShoppingCartOutlinedIcon = styled(ShoppingCartCheckoutOutlined)`
   &&{
+    color : black;
     ${mobile({width : "100%", height : "3rem"})}
     ${mobile_425width({width : "100%", height : "3rem"})}
   }
@@ -125,14 +129,14 @@ const Navbar = () => {
               <Search style={{color : "gray", fontSize : 16, marginLeft : "5px"}}/>  {/*Using inline styles to change the styling of search icon */}
           </SearchContainer>
         </LeftPortion>
-        <CenterPortion><Logo>EVO</Logo></CenterPortion>
+        <CenterPortion><Link to='/' style={{textDecoration : "none", color: "black"}}><Logo>EVO</Logo></Link></CenterPortion>
         <RightPortion>
           <MenuDiv>
-            <MenuItem>Register</MenuItem>
-            <MenuItem>Sign In</MenuItem>
-            <ShoppingCartBadge badgeContent={1} color="primary">{/*React badge Component used to show number of items on cart.*/}
+            <MenuItem to='/register'>Register</MenuItem>
+            <MenuItem to='/login'>Sign In</MenuItem>
+            <Link to="/shoppingcart"><ShoppingCartBadge badgeContent={1} color="primary">{/*React badge Component used to show number of items on cart.*/}
               <ShoppingCartOutlinedIcon/>  {/*Material UI Shopping Cart Icon*/}
-            </ShoppingCartBadge> 
+            </ShoppingCartBadge></Link>
           </MenuDiv>
         </RightPortion>
       </Wrapper>
