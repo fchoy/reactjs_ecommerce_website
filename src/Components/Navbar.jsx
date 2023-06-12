@@ -134,7 +134,7 @@ const Navbar = () => {
           <MenuDiv>
             <MenuItem to='/register'>Register</MenuItem>
             <MenuItem to='/login'>Sign In</MenuItem>
-            <Link to="/shoppingcart"><ShoppingCartBadge badgeContent={1} color="primary">{/*React badge Component used to show number of items on cart.*/}
+            <Link to="/shoppingcart" style={{textAlign: "center"}}><ShoppingCartBadge badgeContent={1} color="primary" style={{width: "3rem"}}>{/*React badge Component used to show number of items on cart.*/}
               <ShoppingCartOutlinedIcon/>  {/*Material UI Shopping Cart Icon*/}
             </ShoppingCartBadge></Link>
           </MenuDiv>

@@ -20,7 +20,7 @@ const FormWrapper = styled.div`
   flex-direction: column;
   width: 40%;
   padding : 20px;
-  background-color: rgba(128, 128, 128, 0.2);
+  background-color: rgba(128, 128, 128, 0.5);
   justify-content: center;
   align-items: center;
 
